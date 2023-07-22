@@ -2,12 +2,57 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import NavBar from "./Components/NavBar.jsx";
+import Footer from "./Components/Footer.jsx";
+import Home from "./Components/Home.jsx";
+import Programs from "./Components/Programs.jsx";
+import Rebook from "./Components/Rebook.jsx";
+import Confirmation from "./Components/Confirmation.jsx";
+import Locations from "./Components/Locations.jsx";
+import Laundry from "./Components/Laundry.jsx";
+import Contact from './Components/Contact';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "programs",
+    element: <Programs />,
+  },
+  {
+    path: "rebook",
+    element: <Rebook />,
+  },
+  {
+    path: "confirmation",
+    element: <Confirmation />,
+  },
+  {
+    path: "locations",
+    element: <Locations />,
+  },
+  {
+    path: "laundry",
+    element: <Laundry />,
+  },
+  {
+    path: "contact",
+    element: <Contact />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
